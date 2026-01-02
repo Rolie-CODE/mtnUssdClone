@@ -1,0 +1,14 @@
+MTN MoMo CLI Simulator – Features Overview
+
+This terminal-based MTN Mobile Money simulator allows users to log in securely using a MoMo number and PIN and interact 
+with a menu-driven interface similar to the real USSD experience. Users can transfer money to other MoMo users
+and supported networks, add and manage contacts, check wallet balance, and view transaction history.
+
+The application supports PIN verification, balance updates after transactions, 
+loan requests that credit the wallet, and persistent data storage using JSON so balances, 
+contacts, and history are saved between sessions. It also includes multiple service menus such as airtime and bundles, MoMoPay, financial services, 
+and promotional options, providing a realistic end-to-end MoMo user experience in the terminal.
+
+
+  Momo Account Number = 0550002609
+  default pin = 1234
