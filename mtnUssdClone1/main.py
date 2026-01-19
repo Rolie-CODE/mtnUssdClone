@@ -175,12 +175,22 @@ def loanMoney():
 # End Of Program Functions
 
 # Main Program
+load_data()
+clear_screen()
+
 print("Welcome to MTN MoMo Service")
 print("---------------------------")
 print("1. Log into MoMo")
-print("2. Exit")
+print("2. Sign Up for MoMo")
+print("3. Exit")
+
 userInput = input("")
-if userInput != "1":
+try:
+    userInput = int(userInput)
+except ValueError:
+    print("Enter a valid input")
+    
+if userInput != "1" and userInput != "2":
     print("Thank you for using MoMo services")
     exit()
 clear_screen()
@@ -194,7 +204,24 @@ if userInput == "1":
             print("Invalid Pin. Exiting.")
             exit()
         clear_screen()
-load_data()  # LOAD DATA AT STARTUP
+
+if userInput == "2":
+    print("Sign Up for MoMo")
+    print("Enter MoMo Number")
+    userInput = input("")
+    print("Set MoMo Pin")
+    pin = input("")
+    if len(pin) != 4 or not pin.isdigit():
+        print("Pin must be a 4-digit number. Exiting.")
+        exit()
+    MP = pin
+    save_data()
+    clear_screen()
+    print("MoMo Account Created Successfully!")
+    input("Press Enter to continue...")
+    clear_screen()
+
+
 while True:
     clear_screen()
     momoMainmenu()
@@ -275,21 +302,21 @@ while True:
                             input("Press Enter to continue...")
                             clear_screen()
 
-                elif userInput == "2":
+            elif userInput == "2":
                     print("Enter Number")
-                phoneNumber = input("")
-                if not checkIfNumberIsAllowedTelecel(phoneNumber):
+            phoneNumber = input("")
+            if not checkIfNumberIsAllowedTelecel(phoneNumber):
                     print("Invalid phone number.")
                     input("Press Enter to continue...")
                     clear_screen()
                     continue
-                clear_screen()
+            clear_screen()
 
-                print("Confirm Number")
-                phoneNumber1 = input("")
-                clear_screen()
+            print("Confirm Number")
+            phoneNumber1 = input("")
+            clear_screen()
 
-                if phoneNumber in myContacts and phoneNumber == phoneNumber1:
+            if phoneNumber in myContacts and phoneNumber == phoneNumber1:
                     print("Enter Amount")
                     amount = input("")
                     clear_screen()
